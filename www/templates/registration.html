@@ -1,0 +1,39 @@
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header bar-balanced">
+    <h1 class="title">Registrarse</h1>
+    <button class="button" ng-click="closeRegistration()">
+      <i class="icon ion-close-round"></i>
+    </button>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doRegistrarse()" name="registrarse">
+
+      <div class="list" id="logininputs">
+       
+        <p class="assertive" ng-show="registrarse.usernamereg.$invalid && registrarse.usernamereg.$touched || registrarse.passwordreg.$invalid && registrarse.passwordreg.$touched">Por favor inserte su email y password correctamente</p>
+           
+
+        <label class="item item-input padding-vertical">
+          <input type="text" ng-model="regData.nombre" placeholder="Nombre Completo" name="fullnamereg" ng-required="true"> 
+        </label>
+
+        <label class="item item-input padding-vertical">
+          <input type="email" ng-model="regData.email" placeholder="Usuario (email)" name="usernamereg" ng-required="true"> 
+        </label>
+       
+        <label class="item item-input padding-vertical">
+          <input type="password" ng-model="regData.password" placeholder="Contraseña" ng-required="true" name="passwordreg">
+        </label>
+
+      </div>
+          <div class="row">
+          
+          <div class="col">
+            
+            <button class="button button-block button-positive" type="submit">Registrarse</button>
+          
+          </div>
+        </div>
+    </form>
+  </ion-content>
+</ion-modal-view>
