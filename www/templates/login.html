@@ -1,9 +1,14 @@
 <ion-view>
-  <ion-header-bar class="bar bar-header bar-balanced">
+  <!-- <ion-header-bar class="bar bar-header bar-balanced">
     <h1 class="title">Iniciar Sesión</h1>
-  </ion-header-bar>
-  <ion-content>
-    <form ng-submit="doLogin()" name="logearse">
+  </ion-header-bar> -->
+  <ion-content class="padding scroll-bg">
+
+    <div class="center-content">
+
+    <img src="../img/logo.png" class="logoclientes">
+
+    <form ng-submit="doLogin()" name="logearse" id="logearse">
 
       <div class="list" id="logininputs">
         <p class="assertive" ng-show="logearse.username.$invalid && logearse.username.$touched || logearse.password.$invalid && logearse.password.$touched">Por favor inserte su email y password correctamente</p>
@@ -29,5 +34,8 @@
           </div>   
         </div>
     </form>
+
+    </div>
+
   </ion-content>
 </ion-view>

@@ -4,18 +4,18 @@
           <i class="icon ion-ios-plus"></i>
         </button>
   </ion-nav-buttons>
-  <ion-content>
-  	<div class="row">
-        <div class="col">
+  <ion-content class="padding scroll-bg-clientes">
+  	<div>
+        <div id="busquedaclientes">
         	<label class="item item-input">
 			    <i class="icon ion-search placeholder-icon"></i>
 			    <input type="search" placeholder="Buscar" ng-model="busqueda">
 			 </label>
         </div>
     </div>
-    <ion-list class="animate-blinds">
-      <ion-item ng-repeat="(k,v) in filterSecId(clienteslist) | orderBy:'name' | filter: busqueda" href="#/app/clientes/{{ k }}" class="item-text-wrap item item-icon-right">
-      	{{v.name}} <span class="empresalista">// {{v.empresa}}</span>
+    <ion-list class="animate-blinds" id="listadeclientes">
+      <ion-item ng-repeat="cliente in clienteslist | orderBy:'name' | toArray | filter:busqueda" href="#/app/clientes/{{ cliente.$key }}" class="item-text-wrap item item-icon-right">
+      	{{cliente.name}} <span class="empresalista">// {{cliente.empresa}}</span>
         <i class="icon ion-ios-arrow-right"></i>
       </ion-item>
     </ion-list>

@@ -1,4 +1,12 @@
 {
   "name": "cliente",
-  "app_id": "3c1b7197"
+  "app_id": "3c1b7197",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
 }

@@ -54,9 +54,9 @@
     var clientesde = new Firebase("https://clientesmaquila.firebaseio.com/clientes");
 
       clientesde.orderByChild("usuario").equalTo(authData.uid).on("value", function(resultados) {
-
         var datalista = resultados.val();
         $scope.clienteslist = datalista;
+        //console.log(datalista);
 
       
       }, function (errorObject) {

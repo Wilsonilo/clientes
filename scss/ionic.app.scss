@@ -14,6 +14,45 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
+$balanced:							#213141!default;
+$base-background-color:				#213141 !default;
+$big-bg:      		'http://www.wilsonmunoz.net/etc/clientes/bg2.jpg';
+$big-bg-clientes: 	'http://www.wilsonmunoz.net/etc/clientes/bg.jpg';
+
+.scroll-bg {
+  background: url($big-bg) no-repeat center center fixed;
+  background-size: cover;
+}
+.scroll-bg-clientes {
+  background: url($big-bg-clientes) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.logoclientes{
+	margin-top:30%;
+	width:100%;
+}
+#logearse .item{
+	 opacity: 0.7;
+}
+
+#busquedaclientes .item{
+
+	background-color: rgba(255, 103, 83, 0.5);
+}
+
+#busquedaclientes input[type="search"], , #busquedaclientes .placeholder-icon{
+
+	color:#fff;
+
+}
+
+#busquedaclientes input::-moz-placeholder{ color: #fff; }
+#busquedaclientes input:-ms-input-placeholder { color: #fff; }
+#busquedaclientes input::-webkit-input-placeholder {
+  color: #fff;
+  text-indent: 0; 
+}
 
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
