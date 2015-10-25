@@ -1,0 +1,36 @@
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header bar-balanced">
+    <h1 class="title">Editar Proyecto</h1>
+    <button class="button" ng-click="cerrarEditarDato()">
+      <i class="icon ion-close-round"></i>
+    </button>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="EditarData()" name="guardarcliente">
+
+      <div > 
+
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Proyecto</span>
+          <input type="text" placeholder="Website" name="proyectoeditdata" ng-model="editDataData.proyecto">
+        </label>
+
+        <input type="hidden" ng-model="editDataData.clienteespecificoaid" value="{{ clienteespecificoaid }}">
+        <input type="hidden" ng-model="editDataData.idproyecto" value="{{ editDataData.idproyecto }}">
+
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Costo</span>
+          <input type="text" placeholder="$" name="costoeditdata" ng-model="editDataData.costo">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Descripción</span>
+          <textarea name="descriptioneditdata" ng-model="editDataData.descripcion" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod..." rows="4"></textarea>
+        </label>
+
+      </div>
+          
+      <button class="button button-block button-positive" type="submit">Editar</button>
+
+    </form>
+  </ion-content>
+</ion-modal-view>

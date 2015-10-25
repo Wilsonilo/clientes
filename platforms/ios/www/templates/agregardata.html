@@ -1,0 +1,33 @@
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header bar-balanced">
+    <h1 class="title">Nuevo Proyecto</h1>
+    <button class="button" ng-click="cerrarDato()">
+      <i class="icon ion-close-round"></i>
+    </button>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="guardarData()" name="guardarcliente">
+
+      <div > 
+
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Proyecto</span>
+          <input type="text" placeholder="Website" name="proyectodatadata" ng-model="addDataData.proyecto">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Costo</span>
+          <input type="text" placeholder="$" name="costodatadata" ng-model="addDataData.costo">
+        </label>
+        <input type="hidden" name="idcliente" value="" g-model="addDataData.idcliente">
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Descripción</span>
+          <textarea name="descriptiondatadata" ng-model="addDataData.descripcion" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod..." rows="4"></textarea>
+        </label>
+
+      </div>
+          
+      <button class="button button-block button-positive" type="submit">Agregar</button>
+
+    </form>
+  </ion-content>
+</ion-modal-view>

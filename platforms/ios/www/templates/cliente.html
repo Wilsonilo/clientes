@@ -1,0 +1,66 @@
+<ion-view view-title="Más Información">
+    <ion-nav-buttons side="right">
+        <button class="button button-energized" ng-click="agregarDato()">
+          <i class="icon ion-ios-plus"></i>
+        </button>
+  </ion-nav-buttons>
+  <ion-content>
+
+	<div class="list card" ng-model="clienteespecifico">
+
+	  <div class="item item-text-wrap">
+
+	    <h1>	{{ clienteespecifico.name }} 	</h1>
+	    <h2>	{{ clienteespecifico.empresa }} </h2>
+	    <h3>	{{ clienteespecifico.email }} 	</h3>
+
+	  </div>
+	  
+	  <div class="item item-divider">
+		    
+		    Pendientes
+
+	  </div>
+	  
+	  <ion-list show-delete="false" can-swipe="true">	
+
+		  <ion-item ng-repeat="(k,v) in filterSecId(clienteespecifico.proyectos)" ng-show="v.activo == 'true'">
+
+		     {{ v.proyecto }} ( ${{ v.costo }} )
+		     <br>
+		     <small>{{ v.description }}</small>
+
+		     <ion-option-button class="button-balanced icon ion-heart" ng-click="proyectoTerminado(k, clienteespecificoaid)"></ion-option-button>
+
+		     <ion-option-button class="button-positive icon ion-edit" ng-click="editarProyecto(k, clienteespecificoaid, v)"></ion-option-button>
+
+		     <ion-option-button class="button-assertive icon ion-trash-a" ng-click="eliminarProyecto(k, clienteespecificoaid)"></ion-option-button>
+
+		  </ion-item>  		
+
+      </ion-list>
+
+	  <div class="item item-divider">
+	    
+	    Terminados
+	  
+	  </div>	
+	  	  
+	  <ion-list >
+	      
+
+		  <ion-item ng-repeat="(k,v) in filterSecId(clienteespecifico.proyectos)" ng-show="v.activo == 'false'" class="done">
+
+		     {{ v.proyecto }} ( ${{ v.costo }} )
+		     <br>
+		     <small>{{ v.description }}</small>
+		     <ion-option-button class="button-light icon ion-heart-broken" ng-click="proyectoActivo(k, clienteespecificoaid)"></ion-option-button>
+		    <ion-option-button class="button-assertive icon ion-trash-a" ng-click="eliminarProyecto(k, clienteespecificoaid)"></ion-option-button>
+		  </ion-item> 
+
+      </ion-list>
+
+	</div>
+
+</ion-content>
+</ion-view>
